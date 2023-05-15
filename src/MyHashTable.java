@@ -14,7 +14,7 @@ public class MyHashTable<K, V> {
         this.chainArray = new LinkedList[M];
     }
     public int hash(K key) {
-        return 0;
+        return key.hashCode() % M;
     }
     public void put(K key, V value) {
 
