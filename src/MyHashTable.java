@@ -113,4 +113,21 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
+    public void replace(K key , V value){
+        int index = hash(key);
+        if(chainArray[index] == null){
+            chainArray[index] = new LinkedList<HashNode<K, V>>();
+        }
+        for (HashNode<K, V> node : chainArray[index]) {
+            if (node.getKey().equals(key)) {
+                node.getValue();
+                chainArray[index].remove(node);
+                size--;
+                node.setValue(value);
+                return;
+            }
+        }
+        chainArray[index].add(new HashNode<K, V>(key, value));
+        size++;
+    }
 }

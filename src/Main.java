@@ -7,6 +7,7 @@ public class Main {
         for (int i = 0; i < 10000; i++) {
             int val = r.nextInt(0, 9999999);
             hashTable.put(new TestingClass(val), "Student " + val);
+            hashTable.replace(new TestingClass(val), "Student" + val);
         }
     }
 }
